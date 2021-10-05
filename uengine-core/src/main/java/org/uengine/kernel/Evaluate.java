@@ -269,7 +269,11 @@ public class Evaluate extends Condition{
     			else
     				returnVal = new Double(strReturnVal);
     		}
-    		
+
+			if( compareVal instanceof String && returnVal.getClass() == Boolean.class){
+				compareVal = Boolean.valueOf((String)compareVal);
+			}
+
     		if( condition.equals( "!="))
     			return !( instance.get(scope, key).equals(compareVal) );
     

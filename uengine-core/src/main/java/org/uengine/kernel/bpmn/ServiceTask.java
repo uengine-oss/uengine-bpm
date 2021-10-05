@@ -159,6 +159,8 @@ public class ServiceTask extends DefaultActivity {
                 payload = null;
             }
 
+            instance.setProperty(getTracingTag(), "payload", payload);
+
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);
 
